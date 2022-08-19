@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'echo $docker_hub | docker login -u --username=_ --password-stdin registry.heroku.com'
+        sh 'echo $docker_hub | docker login -u --username=_ --password-stdin'
       }
     }
     stage('Push to Docker Hub') {
