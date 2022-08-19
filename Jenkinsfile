@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push to Docker Hub') {
       steps {
-        sh 'docker push $IMAGE_NAME:$IMAGE_TAG'
+        sh 'docker pull $IMAGE_NAME:$IMAGE_TAG'
       }
     }
     stage('Release the image') {
