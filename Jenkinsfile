@@ -2,14 +2,14 @@ pipeline {
   agent any
   environment {
     docker_hub = credentials('docker-hub')
-    IMAGE_NAME = 'amofidian69/jenkins-react-example'
-    IMAGE_TAG = 'latest'
+    IMAGE_NAME = 'amofidian69/test'
+    IMAGE_TAG = '3'
     APP_NAME = 'jenkins-example-react'
   }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
+        echo 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
       }
     }
     stage('Login') {
