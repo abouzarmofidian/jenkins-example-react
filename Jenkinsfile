@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    docker-hub = credentials('docker-hub')
+    docker_hub = credentials('docker-hub')
     IMAGE_NAME = 'amofidian69/jenkins-react-example'
     IMAGE_TAG = 'latest'
     APP_NAME = 'jenkins-example-react'
@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'echo $docker-hub | docker login -u --username=_ --password-stdin registry.heroku.com'
+        sh 'echo $docker_hub | docker login -u --username=_ --password-stdin registry.heroku.com'
       }
     }
     stage('Push to Docker Hub') {
