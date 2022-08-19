@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'echo $docker_hub | docker login -u --username=_ --password-stdin hub.docker.com'
+        sh 'echo $docker_hub_PSW | docker login -u $docker_hub_USR --password-stdin'
       }
     }
     stage('Push to Docker Hub') {
