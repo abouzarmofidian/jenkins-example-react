@@ -19,16 +19,12 @@ pipeline {
     }
     stage('Push to Docker Hub') {
       steps {
-        sh '''
-          docker push $IMAGE_NAME:$IMAGE_TAG
-        '''
+        sh 'docker push $IMAGE_NAME:$IMAGE_TAG'
       }
     }
     stage('Release the image') {
       steps {
-        sh '''
-          docker run -d --name react-example -port 3000:3000 $IMAGE_NAME:$IMAGE_TAG
-        '''
+        sh 'docker run -d --name react-example -port 3000:3000 $IMAGE_NAME:$IMAGE_TAG'
       }
     }
   }
