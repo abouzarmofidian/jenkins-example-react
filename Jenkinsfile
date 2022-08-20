@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
+        sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
       }
     }
     stage('Login') {
