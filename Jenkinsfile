@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Release the image') {
       steps {
-        sh 'docker run -d --name react-example -p 3000:3000 $IMAGE_NAME:$IMAGE_TAG'
+        sh 'docker run -d --name react-example $IMAGE_NAME:$IMAGE_TAG'
       }
     }
   }
